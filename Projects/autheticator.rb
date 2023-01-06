@@ -6,7 +6,7 @@ users = [
   {username: "Ralph", password: "password5" },
 ]
 
-def auth_user(username, password,list_of_users)
+def auth_user(username, password, list_of_users)
   list_of_users.each do |user_record|
     if user_record[:username] == username && user_record[:password] == password
       return user_record
@@ -22,7 +22,7 @@ puts "Welcome to the autheticator"
 10.times { print "-*-"}
 puts
 puts "This program will take input from the user and compare password"
-puts "if password is correct, you will get back the user object"
+puts "If password is correct, you will get back the user object"
 
 
 user_attempts = 1
@@ -31,7 +31,6 @@ while user_attempts < 4
   username = gets.chomp.capitalize
   print "Password:"
   password = gets.chomp
-
   authentification = auth_user(username, password, users)
   puts authentification
   puts "Press n to quit or any other key to continue."
@@ -40,4 +39,4 @@ while user_attempts < 4
   user_attempts += 1
 end
 
-puts "You have exceeded the number of attempts" if attempts == 4
+puts "You have exceeded the number of attempts" if user_attempts == 4
